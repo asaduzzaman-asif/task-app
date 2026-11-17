@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>কোড ক্লাস</title>
+  <meta name="theme-color" content="#0a6b4b">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- CodeMirror (লাইভ এডিটর) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a href="#/" class="brand"><span class="glyph">&lt;/&gt;</span> কোড ক্লাস</a>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <!-- নিচের নেভিগেশন: নতুন পেজ যোগ করতে এখানে একটি লিংক আর app.js-এ একটি route দিন -->
+  <nav class="tabs" aria-label="প্রধান মেনু">
+    <a href="#/" data-p="home">হোম</a>
+    <a href="#/profile" data-p="profile">প্রোফাইল</a>
+    <a href="#/attendance" data-p="attendance">হাজিরা</a>
+    <a href="#/pdf" data-p="pdf">ছবি→PDF</a>
+    <a href="#/chat" data-p="chat">চ্যাট</a>
+  </nav>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="config.js"></script>
+  <script src="chat.js"></script>
+  <script src="attendance.js"></script>
+  <script src="imagepdf.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

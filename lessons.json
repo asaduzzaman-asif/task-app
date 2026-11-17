@@ -1,0 +1,242 @@
+{
+  "tracks": [
+    { "id": "html", "title": "HTML", "icon": "<html>", "desc": "ওয়েবপেজের কাঠামো বানানো শিখি।" },
+    { "id": "css",  "title": "CSS",  "icon": "{ css }", "desc": "রং, ফন্ট আর সাজসজ্জা।" },
+    { "id": "js",   "title": "JavaScript", "icon": "JS()", "desc": "পেজকে প্রাণ দিই।" }
+  ],
+
+  "_নতুন_লেসন_যোগ_করার_নিয়ম": "lessons-এর ভেতরে একটি { } ব্লক কপি করে নতুন id দিন। track হবে html/css/js। explain = Bangla ব্যাখ্যা (লাইনগুলো আলাদা)। example = উদাহরণ কোড। task.starter = শুরুর কোড। task.target = লক্ষ্য ডিজাইনের HTML। task.checks = অটো চেক। কোডে ডাবল কোট (\") না দিয়ে সিঙ্গেল কোট (') ব্যবহার করুন, আর নতুন লাইনের জন্য \\n লিখুন।",
+
+  "lessons": [
+    {
+      "id": "html-1", "track": "html", "title": "HTML কী?",
+      "explain": [
+        "HTML-এর পুরো নাম <code>HyperText Markup Language</code>। এটা দিয়ে ওয়েবপেজের কাঠামো বানানো হয়।",
+        "একটা বাড়ির কথা ভাবো: HTML হলো দেয়াল-ঘর-দরজা, CSS হলো রং ও সাজসজ্জা, আর JavaScript হলো বিদ্যুৎ ও সুইচ।",
+        "ব্রাউজার (Chrome, Firefox) HTML পড়ে আমাদের পর্দায় পেজ দেখায়।"
+      ],
+      "example": "<h1>আমার প্রথম পেজ</h1>\n<p>হ্যালো, বিশ্ব!</p>",
+      "task": {
+        "text": "নিজের নাম একটি <code>h1</code>-এ এবং এক লাইনের পরিচয় একটি <code>p</code>-তে লেখো।",
+        "starter": "",
+        "target": "<h1>রিফাত</h1><p>আমি ক্লাস সেভেনে পড়ি।</p>",
+        "checks": [
+          { "sel": "h1", "msg": "একটি h1 ট্যাগ আছে" },
+          { "sel": "p", "msg": "একটি p ট্যাগ আছে" }
+        ]
+      }
+    },
+    {
+      "id": "html-2", "track": "html", "title": "ট্যাগ কী?",
+      "explain": [
+        "HTML-এ সবকিছু <b>ট্যাগ</b> দিয়ে লেখা হয়। ট্যাগ থাকে <code>&lt; &gt;</code> চিহ্নের ভেতরে।",
+        "বেশিরভাগ ট্যাগের একটি শুরু (<code>&lt;p&gt;</code>) আর একটি শেষ (<code>&lt;/p&gt;</code>) থাকে। শেষ ট্যাগে <code>/</code> দিতে হয়।",
+        "শুরু-ট্যাগ, লেখা আর শেষ-ট্যাগ মিলিয়ে হয় একটি <b>এলিমেন্ট</b>। এক ট্যাগের ভেতরে আরেক ট্যাগও রাখা যায়।"
+      ],
+      "example": "<p>আমি <strong>HTML</strong> শিখছি।</p>",
+      "task": {
+        "text": "একটি <code>p</code> লেখো, যার ভেতরে একটি শব্দ <code>strong</code> ট্যাগে আছে।",
+        "starter": "",
+        "target": "<p>আজ আমি <strong>ট্যাগ</strong> শিখলাম।</p>",
+        "checks": [
+          { "sel": "p strong", "msg": "p-এর ভেতরে strong ট্যাগ আছে" }
+        ]
+      }
+    },
+    {
+      "id": "html-3", "track": "html", "title": "পেজের কাঠামো",
+      "explain": [
+        "প্রতিটি HTML পেজের একটি নির্দিষ্ট কাঠামো থাকে।",
+        "<code>&lt;!DOCTYPE html&gt;</code> বলে এটি আধুনিক HTML। <code>&lt;html&gt;</code> হলো পুরো পেজ।",
+        "<code>&lt;head&gt;</code>-এর ভেতরে থাকে পেজের তথ্য (যেমন <code>&lt;title&gt;</code> — ট্যাবে যে নাম দেখা যায়)। <code>&lt;body&gt;</code>-এর ভেতরে থাকে যা পর্দায় দেখা যায়।"
+      ],
+      "example": "<!DOCTYPE html>\n<html>\n<head>\n  <title>আমার পেজ</title>\n</head>\n<body>\n  <h1>স্বাগতম</h1>\n</body>\n</html>",
+      "task": {
+        "text": "পুরো কাঠামো লেখো: DOCTYPE, html, head (ভেতরে title), body (ভেতরে একটি h1)।",
+        "starter": "",
+        "target": "<h1>স্বাগতম</h1><p style='color:#777'>(পেজের শিরোনাম title-এ থাকবে, পর্দায় দেখা যাবে না)</p>",
+        "checks": [
+          { "re": "<!DOCTYPE html>", "msg": "DOCTYPE আছে" },
+          { "re": "<title>[^<]+</title>", "msg": "title-এ লেখা আছে" },
+          { "sel": "head > title", "msg": "title আছে head-এর ভেতরে" },
+          { "sel": "body h1", "msg": "body-এর ভেতরে h1 আছে" }
+        ]
+      }
+    },
+    {
+      "id": "html-4", "track": "html", "title": "হেডিং: h1 থেকে h6",
+      "explain": [
+        "শিরোনাম লিখতে <code>h1</code> থেকে <code>h6</code> ট্যাগ ব্যবহার হয়। <code>h1</code> সবচেয়ে বড় ও গুরুত্বপূর্ণ, <code>h6</code> সবচেয়ে ছোট।",
+        "একটি পেজে সাধারণত একটিই <code>h1</code> রাখা ভালো।"
+      ],
+      "example": "<h1>বড় শিরোনাম</h1>\n<h2>মাঝারি শিরোনাম</h2>\n<h3>ছোট শিরোনাম</h3>",
+      "task": {
+        "text": "<code>h1</code>, <code>h2</code> ও <code>h3</code> তিনটি হেডিং লেখো।",
+        "starter": "",
+        "target": "<h1>আমার স্কুল</h1><h2>আমার শ্রেণি</h2><h3>আমার বন্ধুরা</h3>",
+        "checks": [
+          { "sel": "h1", "msg": "h1 আছে" },
+          { "sel": "h2", "msg": "h2 আছে" },
+          { "sel": "h3", "msg": "h3 আছে" }
+        ]
+      }
+    },
+    {
+      "id": "html-5", "track": "html", "title": "অনুচ্ছেদ: p, br",
+      "explain": [
+        "<code>p</code> ট্যাগ দিয়ে অনুচ্ছেদ (paragraph) লেখা হয়। প্রতিটি <code>p</code> নতুন লাইনে শুরু হয়।",
+        "<code>br</code> দিয়ে লাইন ভাঙা যায়। এর শেষ-ট্যাগ লাগে না।"
+      ],
+      "example": "<p>প্রথম অনুচ্ছেদ।</p>\n<p>দ্বিতীয় অনুচ্ছেদ,<br>এটি নতুন লাইনে।</p>",
+      "task": {
+        "text": "দুটি <code>p</code> লেখো। একটির ভেতরে <code>br</code> দিয়ে লাইন ভাঙো।",
+        "starter": "",
+        "target": "<p>আমার নাম রিফাত।</p><p>আমি ঢাকায় থাকি,<br>আর HTML শিখছি।</p>",
+        "checks": [
+          { "sel": "p", "min": 2, "msg": "কমপক্ষে দুটি p আছে" },
+          { "sel": "br", "msg": "br ট্যাগ আছে" }
+        ]
+      }
+    },
+    {
+      "id": "html-6", "track": "html", "title": "লিংক: a ট্যাগ",
+      "explain": [
+        "<code>a</code> ট্যাগ দিয়ে লিংক বানানো হয়। কোথায় যাবে তা <code>href</code> অ্যাট্রিবিউটে লিখতে হয়।",
+        "অ্যাট্রিবিউট হলো ট্যাগের অতিরিক্ত তথ্য, যা শুরু-ট্যাগের ভেতরে লেখা হয়।"
+      ],
+      "example": "<a href='https://www.wikipedia.org'>উইকিপিডিয়ায় যাও</a>",
+      "task": {
+        "text": "একটি লিংক বানাও, যার href-এ কোনো ওয়েবসাইটের ঠিকানা আছে।",
+        "starter": "",
+        "target": "<a href='https://www.wikipedia.org'>উইকিপিডিয়া</a>",
+        "checks": [
+          { "sel": "a[href]", "msg": "href সহ a ট্যাগ আছে" },
+          { "re": "<a[^>]*>[^<]+</a>", "msg": "লিংকের ভেতরে লেখা আছে" }
+        ]
+      }
+    },
+    {
+      "id": "html-7", "track": "html", "title": "ছবি: img ট্যাগ",
+      "explain": [
+        "<code>img</code> ট্যাগ দিয়ে ছবি দেখানো হয়। <code>src</code>-এ ছবির ঠিকানা, <code>alt</code>-এ ছবির বর্ণনা লিখতে হয়।",
+        "ছবি না এলে <code>alt</code>-এর লেখা দেখা যায়। দৃষ্টিহীনদের স্ক্রিন রিডারও এটি পড়ে শোনায়। <code>img</code>-এরও শেষ-ট্যাগ লাগে না।"
+      ],
+      "example": "<img src='photo.jpg' alt='আমার ছবি' width='200'>",
+      "task": {
+        "text": "<code>src</code> ও <code>alt</code> দুটোসহ একটি <code>img</code> লেখো।",
+        "starter": "",
+        "target": "<img src='x.jpg' alt='আমার ছবি'>",
+        "checks": [
+          { "sel": "img[src]", "msg": "img-এ src আছে" },
+          { "sel": "img[alt]", "msg": "img-এ alt আছে" }
+        ]
+      }
+    },
+    {
+      "id": "html-8", "track": "html", "title": "তালিকা: ul, ol, li",
+      "explain": [
+        "<code>ul</code> হলো বুলেট তালিকা, <code>ol</code> হলো নম্বর দেওয়া তালিকা।",
+        "প্রতিটি আইটেম <code>li</code> ট্যাগে লিখতে হয় এবং <code>li</code> থাকে <code>ul</code> বা <code>ol</code>-এর ভেতরে।"
+      ],
+      "example": "<ul>\n  <li>চাল</li>\n  <li>ডাল</li>\n</ul>\n<ol>\n  <li>ঘুম থেকে ওঠা</li>\n  <li>স্কুলে যাওয়া</li>\n</ol>",
+      "task": {
+        "text": "তিনটি আইটেমের একটি <code>ul</code> এবং দুটি আইটেমের একটি <code>ol</code> বানাও।",
+        "starter": "",
+        "target": "<ul><li>আম</li><li>জাম</li><li>কাঁঠাল</li></ul><ol><li>প্রথম</li><li>দ্বিতীয়</li></ol>",
+        "checks": [
+          { "sel": "ul > li", "min": 3, "msg": "ul-এ কমপক্ষে ৩টি li আছে" },
+          { "sel": "ol > li", "min": 2, "msg": "ol-এ কমপক্ষে ২টি li আছে" }
+        ]
+      }
+    },
+
+    {
+      "id": "css-1", "track": "css", "title": "রং: color ও background-color",
+      "explain": [
+        "CSS দিয়ে পেজ সাজানো হয়। <code>&lt;style&gt;</code> ট্যাগের ভেতরে লিখতে হয়।",
+        "গঠন: <code>selector { property: value; }</code>। <code>color</code> লেখার রং, <code>background-color</code> পেছনের রং বদলায়।"
+      ],
+      "example": "<style>\n  h1 { color: white; background-color: seagreen; }\n</style>\n<h1>রঙিন শিরোনাম</h1>",
+      "task": {
+        "text": "<code>h1</code>-এর <code>color</code> ও <code>background-color</code> দুটোই বদলাও।",
+        "starter": "<style>\n\n</style>\n<h1>রঙিন শিরোনাম</h1>",
+        "target": "<h1 style='color:white;background-color:crimson'>রঙিন শিরোনাম</h1>",
+        "checks": [
+          { "re": "h1\\s*\\{[^}]*[^-]color\\s*:", "msg": "color ব্যবহার করেছ" },
+          { "re": "background-color\\s*:", "msg": "background-color ব্যবহার করেছ" }
+        ]
+      }
+    },
+    {
+      "id": "css-2", "track": "css", "title": "ফন্ট: font-size, font-family",
+      "explain": [
+        "<code>font-size</code> লেখার আকার, <code>font-family</code> ফন্টের ধরন, আর <code>font-weight</code> লেখা মোটা করে।",
+        "আকার সাধারণত <code>px</code> বা <code>rem</code> এককে লেখা হয়।"
+      ],
+      "example": "<style>\n  p { font-size: 24px; font-family: Georgia, serif; font-weight: bold; }\n</style>\n<p>বড় ও মোটা লেখা</p>",
+      "task": {
+        "text": "<code>p</code>-এ <code>font-size</code> ও <code>font-family</code> ঠিক করো।",
+        "starter": "<style>\n\n</style>\n<p>আমি CSS শিখছি</p>",
+        "target": "<p style='font-size:28px;font-family:Georgia,serif'>আমি CSS শিখছি</p>",
+        "checks": [
+          { "re": "font-size\\s*:", "msg": "font-size আছে" },
+          { "re": "font-family\\s*:", "msg": "font-family আছে" }
+        ]
+      }
+    },
+    {
+      "id": "css-3", "track": "css", "title": "বক্স মডেল: margin, padding, border",
+      "explain": [
+        "প্রতিটি এলিমেন্ট একটি বাক্সের মতো। <code>padding</code> হলো লেখা ও সীমানার মাঝের ফাঁকা জায়গা, <code>border</code> হলো সীমানা, <code>margin</code> হলো বাইরের ফাঁকা জায়গা।"
+      ],
+      "example": "<style>\n  div { padding: 20px; border: 3px solid green; margin: 10px; }\n</style>\n<div>আমি একটি বাক্স</div>",
+      "task": {
+        "text": "একটি <code>div</code>-কে <code>padding</code>, <code>border</code> ও <code>margin</code> দাও।",
+        "starter": "<style>\n\n</style>\n<div>আমি একটি বাক্স</div>",
+        "target": "<div style='padding:20px;border:3px solid green;margin:10px'>আমি একটি বাক্স</div>",
+        "checks": [
+          { "re": "padding\\s*:", "msg": "padding আছে" },
+          { "re": "border\\s*:", "msg": "border আছে" },
+          { "re": "margin\\s*:", "msg": "margin আছে" }
+        ]
+      }
+    },
+
+    {
+      "id": "js-1", "track": "js", "title": "ভ্যারিয়েবল",
+      "explain": [
+        "ভ্যারিয়েবল হলো তথ্য রাখার একটি বাক্স। <code>let</code> দিয়ে তৈরি করা হয়।",
+        "JavaScript দিয়ে আমরা পেজের লেখা বদলাতে পারি: <code>document.getElementById('id').textContent = ...</code>"
+      ],
+      "example": "<p id='out'></p>\n<script>\n  let name = 'রিফাত';\n  document.getElementById('out').textContent = 'হ্যালো ' + name;\n</script>",
+      "task": {
+        "text": "<code>let</code> দিয়ে একটি ভ্যারিয়েবল বানিয়ে তার মান <code>#out</code>-এ দেখাও।",
+        "starter": "<p id='out'></p>\n<script>\n\n</script>",
+        "target": "<p>হ্যালো রিফাত</p>",
+        "checks": [
+          { "re": "\\b(let|const)\\s+\\w+", "msg": "ভ্যারিয়েবল বানিয়েছ" },
+          { "re": "document\\.getElementById", "msg": "getElementById ব্যবহার করেছ" },
+          { "re": "textContent|innerHTML", "msg": "লেখা বদলেছ" }
+        ]
+      }
+    },
+    {
+      "id": "js-2", "track": "js", "title": "বাটনে ক্লিক (ইভেন্ট)",
+      "explain": [
+        "ইভেন্ট মানে ব্যবহারকারীর কাজ, যেমন ক্লিক। <code>addEventListener</code> দিয়ে বলা যায় ক্লিক হলে কী ঘটবে।",
+        "ক্লিকে যে কাজ হবে তা একটি <b>ফাংশনে</b> লেখা হয়।"
+      ],
+      "example": "<button id='btn'>ক্লিক করো</button>\n<p id='msg'></p>\n<script>\n  function sayHi() {\n    document.getElementById('msg').textContent = 'ধন্যবাদ!';\n  }\n  document.getElementById('btn').addEventListener('click', sayHi);\n</script>",
+      "task": {
+        "text": "একটি বাটন বানাও, যা ক্লিক করলে <code>#msg</code>-এ কিছু লেখা দেখায়।",
+        "starter": "<button id='btn'>ক্লিক করো</button>\n<p id='msg'></p>\n<script>\n\n</script>",
+        "target": "<button>ক্লিক করো</button><p>ধন্যবাদ!</p>",
+        "checks": [
+          { "sel": "button", "msg": "button আছে" },
+          { "re": "addEventListener\\s*\\(\\s*['\"]click['\"]|onclick", "msg": "ক্লিক ইভেন্ট আছে" },
+          { "re": "function|=>", "msg": "ফাংশন লিখেছ" }
+        ]
+      }
+    }
+  ]
+}

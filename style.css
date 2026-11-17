@@ -1,0 +1,101 @@
+/* ===== রং ও ফন্ট (এখান থেকে থিম বদলানো যায়) ===== */
+:root{
+  --bg:#f2f6f3; --card:#fff; --ink:#12261f; --mute:#5b6f66; --line:#d3dfd8;
+  --brand:#0a6b4b; --brand-ink:#fff; --gold:#f2b705; --bad:#c92a3a; --good:#0a6b4b;
+  --code-bg:#fbfdfc; --r:14px;
+  font-family:'Hind Siliguri',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0d1613; --card:#15221d; --ink:#e7f3ed; --mute:#93aaa0; --line:#27403586;
+    --brand:#3ddc97; --brand-ink:#06251a; --bad:#ff7b87; --good:#3ddc97; --code-bg:#101b17}
+  .CodeMirror .cm-tag{color:#7fd1ff}.CodeMirror .cm-attribute{color:#ffd37a}
+  .CodeMirror .cm-string{color:#9be59b}.CodeMirror .cm-keyword,.CodeMirror .cm-def{color:#d6a8ff}
+  .CodeMirror .cm-property,.CodeMirror .cm-number{color:#ffb38a}.CodeMirror-cursor{border-color:#fff}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.7;padding-bottom:70px}
+a{color:var(--brand)}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.92em;background:var(--code-bg);border:1px solid var(--line);padding:0 .3em;border-radius:5px;direction:ltr;unicode-bidi:isolate}
+h1,h2,h3{line-height:1.3;margin:.3em 0 .4em}
+h1{font-size:1.7rem}h2{font-size:1.25rem}
+
+.top{position:sticky;top:0;z-index:5;background:var(--brand);color:var(--brand-ink);padding:.6rem 1rem}
+.brand{color:inherit;text-decoration:none;font-weight:700;font-size:1.2rem}
+.glyph{font-family:ui-monospace,Consolas,monospace;background:var(--gold);color:#222;padding:.05em .4em;border-radius:6px;margin-right:.3em}
+#app{max-width:1000px;margin:0 auto;padding:1rem}
+
+.tabs{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--line);z-index:5}
+.tabs a{flex:1;text-align:center;padding:.65rem .2rem;text-decoration:none;color:var(--mute);font-size:.9rem}
+.tabs a.on{color:var(--brand);font-weight:700;box-shadow:inset 0 3px var(--brand)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1rem 1.1rem;margin:0 0 1rem}
+.grid{display:grid;gap:1rem}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ট্র্যাক কার্ড: বড় ট্যাগ-চিহ্নটাই এখানকার মূল আকর্ষণ */
+.track{display:block;text-decoration:none;color:inherit;position:relative;overflow:hidden}
+.track .big{font-family:ui-monospace,Consolas,monospace;font-size:1.9rem;font-weight:700;color:var(--brand);direction:ltr}
+.track.locked{opacity:.55;pointer-events:none}
+.bar{height:8px;background:var(--line);border-radius:9px;overflow:hidden;margin-top:.6rem}
+.bar i{display:block;height:100%;background:var(--brand)}
+
+.list a{display:flex;gap:.7rem;align-items:center;padding:.8rem 1rem;margin-bottom:.6rem;background:var(--card);border:1px solid var(--line);border-radius:var(--r);text-decoration:none;color:var(--ink)}
+.list a.locked{opacity:.5;pointer-events:none}
+.dot{width:1.7rem;height:1.7rem;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;flex:none;font-size:.85rem}
+.dot.ok{background:var(--good);border-color:var(--good);color:var(--brand-ink)}
+
+button,.btn{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:.55rem 1.1rem;background:var(--brand);color:var(--brand-ink);font-weight:500;text-decoration:none;display:inline-block}
+button.ghost{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:10px;padding:.8rem;overflow:auto;direction:ltr;text-align:left;margin:.4rem 0}
+.seg{display:flex;gap:.5rem;margin:.4rem 0}
+.seg button{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.seg button.on{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+
+/* এডিটর + প্রিভিউ: মোবাইলে উপর-নিচে, বড় পর্দায় পাশাপাশি */
+.lab{display:grid;gap:.6rem}
+@media(min-width:800px){.lab{grid-template-columns:1fr 1fr}}
+.CodeMirror{height:300px;border:1px solid var(--line);border-radius:10px;font-size:15px;background:var(--code-bg);color:var(--ink);direction:ltr;text-align:left}
+iframe{width:100%;height:300px;border:1px solid var(--line);border-radius:10px;background:#fff}
+iframe.small{height:150px}
+.task{border-left:5px solid var(--gold)}
+.res li{list-style:none;margin:.2rem 0}.res{padding:0}
+.ok{color:var(--good)}.no{color:var(--bad)}
+.pager{display:flex;justify-content:space-between;gap:.5rem;margin-top:1rem}
+@media(prefers-reduced-motion:no-preference){.bar i{transition:width .5s}}
+
+/* ===== প্রোফাইল (ফেজ ২) ===== */
+.mute{color:var(--mute)}
+.pcard .phead{display:flex;gap:.9rem;align-items:center;flex-wrap:wrap}
+.pcard h2{margin:0}
+.avatar{width:3.4rem;height:3.4rem;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:700;flex:none}
+.lvl{margin-left:auto;background:var(--gold);color:#222;font-weight:700;padding:.15rem .8rem;border-radius:99px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:1rem 0 .4rem}
+.stats div{background:var(--code-bg);border:1px solid var(--line);border-radius:10px;padding:.5rem;text-align:center;line-height:1.3}
+.stats b{display:block;font-size:1.7rem;color:var(--brand)}
+.stats span{font-size:.8rem;color:var(--mute)}
+.note{background:var(--card);border:1px dashed var(--gold);border-radius:10px;padding:.5rem .8rem}
+.row{display:flex;justify-content:space-between;margin-top:.5rem}
+
+/* ===== হাজিরা (ফেজ ৩) ===== */
+input,select{font:inherit;padding:.45rem .6rem;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+.att-row{display:flex;align-items:center;gap:.4rem;padding:.45rem 0;border-bottom:1px solid var(--line)}
+.att-row .nm{flex:1}
+button.tg{background:transparent;color:var(--ink);border:1.5px solid var(--line);padding:.3rem .6rem;font-size:.9rem}
+button.tg.p.on{background:var(--good);color:var(--brand-ink);border-color:var(--good)}
+button.tg.a.on{background:var(--bad);color:#fff;border-color:var(--bad)}
+.tbl{overflow-x:auto;margin-top:.6rem}
+table{border-collapse:collapse;width:100%}
+th,td{border-bottom:1px solid var(--line);padding:.35rem .6rem;text-align:left}
+
+/* ===== ছবি→PDF (ফেজ ৪) ===== */
+.thumb{width:3rem;height:3rem;object-fit:cover;border-radius:8px;border:1px solid var(--line);flex:none}
+button:disabled{opacity:.45;cursor:not-allowed}
+
+/* ===== চ্যাট (ফেজ ৫) ===== */
+.chat{height:50vh;overflow-y:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:.6rem;display:flex;flex-direction:column;gap:.5rem}
+.msg{max-width:80%;align-self:flex-start;background:var(--code-bg);border:1px solid var(--line);border-radius:12px;padding:.3rem .7rem;word-break:break-word}
+.msg.me{align-self:flex-end;background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.msg small{opacity:.75}
+.send{display:flex;gap:.5rem;margin:.5rem 0}.send input{flex:1;min-width:0}
